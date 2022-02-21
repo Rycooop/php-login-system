@@ -2,28 +2,39 @@
 
 include 'conn.php';
 
-$conn = getConn();
-
-echo "Connected <br>";
-
-$query = "SELECT UID FROM users WHERE username='rycoop'";
-
-if ($res = mysqli_query($conn, $query))
-{
-    echo "Queried <br>";
-    if (mysqli_num_rows($res) != 0)
-    {
-        echo "User found! <br>";
-    }
-    else echo "User not found :( <br>";
-
-}
-else echo "Fuck";
-
 ?>
 
 <html>
-    <h1>Hello World</h1>
+    <link rel="stylesheet" href="style.css">
+
+    <h1 class="header">Basic Login/signup system!</h1>
+
+    <h2>Signup</h2>
+    <form method="post">
+        <input type="text" name="sName">
+        <input type="text" name="sPass">
+        <input type="submit">
+    </form>
+    <br>
+
+<?php
+
+require 'signup.inc.php';
+
+?>
+
+    <h2>Login</h2>
+    <form method="post">
+        <label for="username">Username</label>
+        <input type="text" name="username">
+        <label for="password">Password</label>
+        <input type="password" name="password">
+        <input type="submit">
+    </form>
 </html>
 
+<?php
 
+require 'login.inc.php';
+
+?>
