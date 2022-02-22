@@ -1,0 +1,109 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    background-color: beige;
+}
+
+h1
+{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+h1:hover
+{
+    transition: .5s;
+    color: rgb(46, 134, 192);
+}
+
+.login-container
+{
+    position: absolute;
+    top: 330px;
+    left: 50%;
+    width: 30%;
+    height: 430px;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 25px;
+    background-image: linear-gradient(to right, rgb(130, 98, 160), rgb(101, 89, 209));
+}
+
+#signup-cont
+{
+    display: none;
+}
+
+.login-container h2{
+    text-align: center;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+    transform: translateY(-50%);
+    color: crimson;
+    cursor: pointer;
+}
+
+.login-container input{
+    width: 90%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+    outline: none;
+    border: none;
+    border-bottom: 3px solid grey;
+    background-color: inherit;
+    color: rgb(66, 66, 66);
+    margin-bottom: 35px;
+    font-size: 20px;
+}
+
+.login-container input::placeholder
+{
+    font-size: 20px;
+    color: rgb(59, 59, 59);
+}
+
+.login-container input:focus::placeholder
+{
+    transition: .5s;
+    transform: translateY(-100px);
+}
+
+.login-container button
+{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 80%;
+    border: 0;
+    padding: 20px;
+    border-radius: 25px;
+    background-color: crimson;
+    color: rgb(177, 177, 177);
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0px 4px 5px 0px black;
+}
+
+.login-container button:hover
+{
+    transition: .2s;
+    background-color: rgb(238, 113, 113);
+}
+
+.login-container p
+{
+    text-align: center;
+    transform: translateY(-20px);
+    font-size: 16px;
+}
+
+.login-container a
+{
+    cursor: pointer;
+}

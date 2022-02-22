@@ -1,22 +1,20 @@
 <?php
 
-
-if (isset($_POST["sPass"]) && isset($_POST["sName"]))
+if (isset($_POST["sName"]) && isset($_POST["sPass"]))
 {
     $conn = openConnection();
     $username = $_POST["sName"];
     $password = $_POST["sPass"];
 
-    if ($password != NULL && $username != NULL)
+    if ($username != NULL && $password != NULL)
     {
         if (mysqli_query($conn, "INSERT INTO users (username, password) VALUES('$username', '$password')"))
         {
-           echo "Account Created!";
+            echo "Success!";
         }
-        else echo "Cant signup :(";
+        else echo "Error";
     }
-    else echo "Cant Have NULL values!";
-    
+    else echo "Fields cannot be empty!";
 }
 
 ?>
