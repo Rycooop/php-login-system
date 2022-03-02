@@ -16,8 +16,7 @@
             </nav>
     }
     <?php }
-    if (isset($_SESSION['username']))
-    {
+    if (isset($_SESSION['username'])) :
         ?>
         <link rel="stylesheet" href="styling/nav.css">
 
@@ -35,5 +34,5 @@
         </ul>
     </div>
     </nav>
-    <?php } ?>
+    <?php endif ?>
 

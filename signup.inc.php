@@ -6,15 +6,33 @@ if (isset($_POST["sName"]) && isset($_POST["sPass"]))
     $username = $_POST["sName"];
     $password = $_POST["sPass"];
 
-    if ($username != NULL && $password != NULL)
+    if(empty($username) || empty($password))
     {
-        if (mysqli_query($conn, "INSERT INTO users (username, password) VALUES('$username', '$password')"))
-        {
-            echo "Success!";
-        }
-        else echo "Error";
+        echo "<p style='text-align: center; color: red;'>Cannot be NULL</p>";
+        goto finish;
     }
-    else echo "Fields cannot be empty!";
+
+    if (!$stmt = $conn->prepare("INSERT INTO users (username, password) VALUES(?, ?)"))
+    {
+        echo "Sql Error";
+        goto finish;
+    }
+    
+    if (!$stmt->bind_param("ss", $username, $password))
+    {
+        echo "Sql Error";
+        goto finish;
+    }
+
+    if (!$stmt->execute())
+    {
+        echo "Sql Error";
+        goto finish;
+    }
+
+   echo "Successfully Registered!";
 }
+
+finish:
 
 ?>
